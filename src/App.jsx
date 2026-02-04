@@ -2,6 +2,10 @@ import { useState } from "react";
 import Plants from "./plants/plants";
 import Cart from "./cart/cart";
 
+function sortCart(a, b) {
+  return a.id - b.id;
+}
+
 export default function App() {
   const [cart, setCart] = useState([]);
 
@@ -9,11 +13,11 @@ export default function App() {
     const itemIndex = cart.findIndex((cartItem) => cartItem.id === id);
     if (itemIndex === -1) {
       const item = { id, quantity: 1 };
-      setCart(cart.concat([item]));
+      setCart(cart.concat([item]).sort(sortCart));
     } else {
       const item = cart.splice(itemIndex, 1)[0];
       item.quantity++;
-      setCart(cart.concat([item]));
+      setCart(cart.concat([item]).sort(sortCart));
     }
   }
 
@@ -25,9 +29,9 @@ export default function App() {
     item.quantity--;
 
     if (item.quantity <= 0) {
-      setCart(cart.filter((cartItem) => cartItem.id !== id));
+      setCart(cart.filter((cartItem) => cartItem.id !== id).sort(sortCart));
     } else {
-      setCart(cart.concat([item]));
+      setCart(cart.concat([item]).sort(sortCart));
     }
   }
 
