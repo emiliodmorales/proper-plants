@@ -9,7 +9,7 @@ export default function CartList({ cart, addToCart, removeFromCart }) {
       {cart.map((item) => (
         <CartItem
           key={item.id}
-          item={item}
+          plant={item}
           addToCart={addToCart}
           removeFromCart={removeFromCart}
         />

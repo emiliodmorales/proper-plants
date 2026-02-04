@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Plants from "./plants/plants";
 import Cart from "./cart/cart";
+import PLANTS from "./data";
 
 function sortCart(a, b) {
   return a.id - b.id;
@@ -12,7 +13,8 @@ export default function App() {
   function addToCart(id) {
     const itemIndex = cart.findIndex((cartItem) => cartItem.id === id);
     if (itemIndex === -1) {
-      const item = { id, quantity: 1 };
+      const item = PLANTS.filter((plant) => plant.id === id)[0];
+      item.quantity = 1;
       setCart(cart.concat([item]).sort(sortCart));
     } else {
       const item = cart.splice(itemIndex, 1)[0];

@@ -1,7 +1,4 @@
-import PLANTS from "../data";
-
-export default function CartItem({ item, addToCart, removeFromCart }) {
-  const plant = getPlant(item.id);
+export default function CartItem({ plant, addToCart, removeFromCart }) {
   return (
     <li>
       <section id="plant">
@@ -10,15 +7,15 @@ export default function CartItem({ item, addToCart, removeFromCart }) {
       <section id="controls">
         <button
           onClick={() => {
-            removeFromCart(item.id);
+            removeFromCart(plant.id);
           }}
         >
           -
         </button>
-        <p>{item.quantity}</p>
+        <p>{plant.quantity}</p>
         <button
           onClick={() => {
-            addToCart(item.id);
+            addToCart(plant.id);
           }}
         >
           +
@@ -26,8 +23,4 @@ export default function CartItem({ item, addToCart, removeFromCart }) {
       </section>
     </li>
   );
-}
-
-function getPlant(id) {
-  return PLANTS.filter((plant) => plant.id === id)[0];
 }
