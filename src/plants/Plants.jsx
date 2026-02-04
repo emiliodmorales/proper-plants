@@ -4,16 +4,34 @@ import "./plants.css";
 import PlantList from "./PlantList";
 import PlantSorting from "./PlantSorting";
 
+export const SORTING_TYPE = {
+  ID: 0,
+  NAME_ASC: 1,
+  NAME_DES: 2,
+};
+
 export default function Plants({ addToCart }) {
-  const [plants, setPlants] = useState(PLANTS);
+  const [sortingType, setSortingType] = useState(SORTING_TYPE.ID);
+  function sortPlants(a, b) {
+    switch (sortingType) {
+      case SORTING_TYPE.NAME_ASC:
+        return a.name.localeCompare(b.name);
+
+      case SORTING_TYPE.NAME_DES:
+        return b.name.localeCompare(a.name);
+
+      default:
+        return a.id - b.id;
+    }
+  }
 
   return (
     <section id="plants">
       <section className="headerSort">
         <h2>Plants</h2>
-        <PlantSorting plants={plants} setPlants={setPlants} />
+        <PlantSorting setSortingType={setSortingType} />
       </section>
-      <PlantList plants={plants} addToCart={addToCart} />
+      <PlantList plants={PLANTS.sort(sortPlants)} addToCart={addToCart} />
     </section>
   );
 }
