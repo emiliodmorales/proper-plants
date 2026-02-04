@@ -1,15 +1,11 @@
 import "./cart.css";
-import CartItem from "./cartItem";
+import CartList from "./cartList";
 
 export default function Cart({ cart }) {
   return (
     <section id="cart">
       <h2>Cart</h2>
-      <ul>
-        {cart.map((item) => (
-          <CartItem key={item.id} item={item} />
-        ))}
-      </ul>
+      <CartList cart={cart} />
     </section>
   );
 }
