@@ -6,9 +6,9 @@ import SortingDropdown from "../Sorting";
 import { SORTING_TYPE } from "../App";
 
 export default function Plants({ addToCart }) {
-  const [sortingType, setSortingType] = useState(SORTING_TYPE.ID);
+  const [plantSortingType, setPlantSortingType] = useState(SORTING_TYPE.ID);
   function sortPlants(a, b) {
-    switch (sortingType) {
+    switch (plantSortingType) {
       case SORTING_TYPE.NAME_ASC:
         return a.name.localeCompare(b.name);
 
@@ -24,7 +24,7 @@ export default function Plants({ addToCart }) {
     <section id="plants">
       <section className="headerSort">
         <h2>Plants</h2>
-        <SortingDropdown setSortingType={setSortingType} />
+        <SortingDropdown setSortingType={setPlantSortingType} />
       </section>
       <PlantList plants={PLANTS.sort(sortPlants)} addToCart={addToCart} />
     </section>

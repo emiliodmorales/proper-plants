@@ -5,9 +5,9 @@ import { SORTING_TYPE } from "../App";
 import SortingDropdown from "../Sorting";
 
 export default function Cart({ cart, addToCart, removeFromCart }) {
-  const [sortingType, setSortingType] = useState(SORTING_TYPE.ID);
+  const [cartSortingType, setCartSortingType] = useState(SORTING_TYPE.ID);
   function sortCart(a, b) {
-    switch (sortingType) {
+    switch (cartSortingType) {
       case SORTING_TYPE.NAME_ASC:
         return a.name.localeCompare(b.name);
 
@@ -23,7 +23,7 @@ export default function Cart({ cart, addToCart, removeFromCart }) {
     <section id="cart">
       <section className="headerSort">
         <h2>Cart</h2>
-        <SortingDropdown setSortingType={setSortingType} />
+        <SortingDropdown setSortingType={setCartSortingType} />
       </section>
       <CartList
         cart={cart.sort(sortCart)}
