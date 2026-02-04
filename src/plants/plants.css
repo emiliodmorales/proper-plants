@@ -21,3 +21,9 @@
   font-size: 48pt;
   justify-self: center;
 }
+
+.headerSort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

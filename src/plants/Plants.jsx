@@ -9,8 +9,10 @@ export default function Plants({ addToCart }) {
 
   return (
     <section id="plants">
-      <h2>Plants</h2>
-      <PlantSorting plants={plants} setPlants={setPlants} />
+      <section className="headerSort">
+        <h2>Plants</h2>
+        <PlantSorting plants={plants} setPlants={setPlants} />
+      </section>
       <PlantList plants={plants} addToCart={addToCart} />
     </section>
   );
