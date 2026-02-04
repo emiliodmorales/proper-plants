@@ -1,0 +1,21 @@
+ul {
+  list-style-type: none;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+li {
+  border: 1px gray solid;
+  padding: 5px;
+
+  display: grid;
+  gap: 5px;
+}
+
+li p {
+  margin: 0;
+  font-size: 48pt;
+  justify-self: center;
+}
