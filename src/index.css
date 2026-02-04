@@ -3,3 +3,17 @@ main {
   grid-template-columns: 1fr 300px;
   gap: 10px;
 }
+
+@media (orientation: portrait) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #cart {
+    grid-row: 1;
+  }
+
+  #plants {
+    grid-row: 2;
+  }
+}
