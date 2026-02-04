@@ -1,6 +1,6 @@
-import { SORTING_TYPE } from "./Plants";
+import { SORTING_TYPE } from "./App";
 
-export default function PlantSorting({ setSortingType }) {
+export default function SortingDropdown({ setSortingType }) {
   return (
     <select onChange={(e) => setSortingType(Number(e.target.value))}>
       <option value={SORTING_TYPE.ID}>Sort by ID</option>

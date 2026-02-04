@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Plants from "./plants/Plants";
 import Cart from "./cart/Cart";
-import PLANTS from "./data";
+
+export const SORTING_TYPE = {
+  ID: 0,
+  NAME_ASC: 1,
+  NAME_DES: 2,
+};
 
 export default function App() {
   const [cart, setCart] = useState([]);

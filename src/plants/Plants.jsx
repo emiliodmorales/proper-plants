@@ -2,13 +2,8 @@ import { useState } from "react";
 import PLANTS from "../data";
 import "./plants.css";
 import PlantList from "./PlantList";
-import PlantSorting from "./PlantSorting";
-
-export const SORTING_TYPE = {
-  ID: 0,
-  NAME_ASC: 1,
-  NAME_DES: 2,
-};
+import SortingDropdown from "../Sorting";
+import { SORTING_TYPE } from "../App";
 
 export default function Plants({ addToCart }) {
   const [sortingType, setSortingType] = useState(SORTING_TYPE.ID);
@@ -29,7 +24,7 @@ export default function Plants({ addToCart }) {
     <section id="plants">
       <section className="headerSort">
         <h2>Plants</h2>
-        <PlantSorting setSortingType={setSortingType} />
+        <SortingDropdown setSortingType={setSortingType} />
       </section>
       <PlantList plants={PLANTS.sort(sortPlants)} addToCart={addToCart} />
     </section>
