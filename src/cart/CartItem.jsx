@@ -7,7 +7,7 @@ export default function CartItem({ plant, addToCart, removeFromCart }) {
       <section id="controls">
         <button
           onClick={() => {
-            removeFromCart(plant.id);
+            removeFromCart(plant);
           }}
         >
           -
@@ -15,7 +15,7 @@ export default function CartItem({ plant, addToCart, removeFromCart }) {
         <p>{plant.quantity}</p>
         <button
           onClick={() => {
-            addToCart(plant.id);
+            addToCart(plant);
           }}
         >
           +

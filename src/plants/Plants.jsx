@@ -21,7 +21,7 @@ function PlantItem({ plant, addToCart }) {
       <h3>{plant.name}</h3>
       <button
         onClick={() => {
-          addToCart(plant.id);
+          addToCart(plant);
         }}
       >
         Add to cart
