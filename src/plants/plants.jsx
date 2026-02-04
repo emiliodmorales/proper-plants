@@ -19,7 +19,13 @@ function PlantItem({ plant, addToCart }) {
     <li>
       <p>{plant.image}</p>
       <h3>{plant.name}</h3>
-      <button onClick={addToCart}>Add to cart</button>
+      <button
+        onClick={() => {
+          addToCart(plant.id);
+        }}
+      >
+        Add to cart
+      </button>
     </li>
   );
 }

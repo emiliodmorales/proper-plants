@@ -1,6 +1,6 @@
 import PLANTS from "../data";
 
-export default function CartItem({ item }) {
+export default function CartItem({ item, addToCart }) {
   const plant = getPlant(item.id);
   return (
     <li>
@@ -10,7 +10,13 @@ export default function CartItem({ item }) {
       <section id="controls">
         <button>-</button>
         <p>{item.quantity}</p>
-        <button>+</button>
+        <button
+          onClick={() => {
+            addToCart(item.id);
+          }}
+        >
+          +
+        </button>
       </section>
     </li>
   );
