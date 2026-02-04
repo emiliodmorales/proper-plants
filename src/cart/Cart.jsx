@@ -1,16 +1,12 @@
 import "./cart.css";
 import CartList from "./CartList";
 
-function sortCart(a, b) {
-  return a.id - b.id;
-}
-
 export default function Cart({ cart, addToCart, removeFromCart }) {
   return (
     <section id="cart">
       <h2>Cart</h2>
       <CartList
-        cart={cart.sort(sortCart)}
+        cart={cart}
         addToCart={addToCart}
         removeFromCart={removeFromCart}
       />
