@@ -1,11 +1,15 @@
 import "./cart.css";
 import CartList from "./cartList";
 
-export default function Cart({ cart, addToCart }) {
+export default function Cart({ cart, addToCart, removeFromCart }) {
   return (
     <section id="cart">
       <h2>Cart</h2>
-      <CartList cart={cart} addToCart={addToCart} />
+      <CartList
+        cart={cart}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+      />
     </section>
   );
 }

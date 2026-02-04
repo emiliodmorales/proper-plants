@@ -1,6 +1,6 @@
 import PLANTS from "../data";
 
-export default function CartItem({ item, addToCart }) {
+export default function CartItem({ item, addToCart, removeFromCart }) {
   const plant = getPlant(item.id);
   return (
     <li>
@@ -8,7 +8,13 @@ export default function CartItem({ item, addToCart }) {
         {plant.image} {plant.name}
       </section>
       <section id="controls">
-        <button>-</button>
+        <button
+          onClick={() => {
+            removeFromCart(item.id);
+          }}
+        >
+          -
+        </button>
         <p>{item.quantity}</p>
         <button
           onClick={() => {
