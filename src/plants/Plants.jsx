@@ -1,5 +1,6 @@
 import PLANTS from "../data";
 import "./plants.css";
+import PlantItem from "./PlantItem";
 
 export default function Plants({ addToCart }) {
   return (
@@ -11,21 +12,5 @@ export default function Plants({ addToCart }) {
         ))}
       </ul>
     </section>
-  );
-}
-
-function PlantItem({ plant, addToCart }) {
-  return (
-    <li>
-      <p>{plant.image}</p>
-      <h3>{plant.name}</h3>
-      <button
-        onClick={() => {
-          addToCart(plant);
-        }}
-      >
-        Add to cart
-      </button>
-    </li>
   );
 }
