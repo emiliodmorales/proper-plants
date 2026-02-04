@@ -2,7 +2,7 @@ import "./cart.css";
 import CartList from "./cartList";
 
 function sortCart(a, b) {
-  return a.name > b.name;
+  return a.id - b.id;
 }
 
 export default function Cart({ cart, addToCart, removeFromCart }) {
