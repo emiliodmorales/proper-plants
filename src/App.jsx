@@ -1,7 +1,10 @@
-import Plants from "./components/plants";
-import Cart from "./components/cart";
+import { useState } from "react";
+import Plants from "./plants/plants";
+import Cart from "./cart/cart";
 
 export default function App() {
+  const [cart, setCart] = useState();
+
   return (
     <>
       <h1>Proper Plants</h1>
