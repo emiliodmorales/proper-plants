@@ -1,20 +1,22 @@
-ul {
+#plants ul {
   list-style-type: none;
+  padding: 0;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
 }
 
-li {
+#plants li {
   border: 1px gray solid;
+  border-radius: 5px;
   padding: 5px;
 
   display: grid;
   gap: 5px;
 }
 
-li p {
+#plants li p {
   margin: 0;
   font-size: 48pt;
   justify-self: center;

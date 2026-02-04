@@ -3,7 +3,7 @@ import "./plants.css";
 
 export default function Plants({ addToCart }) {
   return (
-    <section>
+    <section id="plants">
       <h2>Plants</h2>
       <ul>
         {PLANTS.map((plant) => (
