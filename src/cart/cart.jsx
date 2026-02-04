@@ -1,5 +1,5 @@
 import "./cart.css";
-import CartList from "./cartList";
+import CartList from "./CartList";
 
 function sortCart(a, b) {
   return a.id - b.id;

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Plants from "./plants/plants";
-import Cart from "./cart/cart";
+import Plants from "./plants/Plants";
+import Cart from "./cart/Cart";
 import PLANTS from "./data";
 
 export default function App() {
