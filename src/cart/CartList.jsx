@@ -10,16 +10,14 @@ export default function CartList({ cart, addToCart, removeFromCart }) {
   }
   return (
     <ul>
-      {cart
-        .map((item) => (
-          <CartItem
-            key={item.id}
-            plant={item}
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
-          />
-        ))
-        .sort(sortCart)}
+      {cart.sort(sortCart).map((item) => (
+        <CartItem
+          key={item.id}
+          plant={item}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
+      ))}
     </ul>
   );
 }
