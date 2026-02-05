@@ -30,6 +30,16 @@ export default function Cart({ cart, addToCart, removeFromCart }) {
         addToCart={addToCart}
         removeFromCart={removeFromCart}
       />
+      <TotalQuantity cart={cart} />
     </section>
+  );
+}
+
+function TotalQuantity({ cart }) {
+  return (
+    <p>
+      Total quantity:{" "}
+      {cart.reduce((total, item) => (total += item.quantity), 0)}
+    </p>
   );
 }
